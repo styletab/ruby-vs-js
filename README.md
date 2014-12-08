@@ -1,3 +1,5 @@
+![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
+
 ## Objects
 Object are really just "things". Lets list some objects.
 
@@ -38,7 +40,7 @@ Person, Book and Integer are all Classes.
 We'll get into how these are represented and created later in the
 week.
 
-### Object's may have data attributes and behavior, aka methods. 
+### Object's may have data *attributes* and *behavior*, aka methods. 
 * Song will have a name, duration, artist name data attributes and
 will have a play method.  
 	* The top song of 92 name is 'Jeremy', artist is 'Pearl Jam'.
@@ -113,11 +115,11 @@ Allow variable names and expressions to be interpreted as strings inside of othe
 * uses the pound curly brace syntax  #{some_variable}
 
 ### Demo
-* Create a strings_interpolation.rb in the demo dir.
+* Create a `strings_interpolation.rb` in the demo dir.
 
 
 ## Lab
-Create a file vehicle_devaluate.rb that create variables for.
+Create a file `vehicle_devaluate.rb` that create variables for.
 * your first name.
 * your last name.
 * the make/model of your first car, or bike.
@@ -131,7 +133,7 @@ The method gets will:
 * Wait for user input in the console/terminal.
 * Return the user input within the program when the user hits the return/enter key.
 
-Open years_until_retire.rb and run it.
+Open `years_until_retire.rb` and run it.
 
 ## Lab
 Do the above lab __BUT__ prompt the user for the value of each variable.
@@ -141,22 +143,22 @@ Do the above lab __BUT__ prompt the user for the value of each variable.
 The Ruby Conditionals If and Case statement are best described with a code along.
 
 ### Demo
-* Create conditionals.rb.
+* Create `conditionals.rb`.
 
 #### Lab 
-* Create a conditionals_lab.rb.
+* Create a `conditionals_lab.rb`.
 * Ask the user for thier letter grade, A|B|C|D|F.
 * Print out a message to the user depending on their grade. 
-* Do this once using if/elsif/else statement.
+* Do this once using `if/elsif/else` statement.
 
 ## Loops
 Will run the _body_ of the loop until either a condition is met OR until a break statement is executed in the body of the loop.
 
 #### Demo
-* Create a loops.rb file.  
+* Create a `loops.rb` file.  
 
 #### Lab
-* Create a loops_lab.rb.
+* Create a `loops_lab.rb`.
 * Create a variable for the number to guess.
 * Create a variable that will hold number entered by the user.
 * Create a loop that prompt the user for a number.
@@ -188,15 +190,15 @@ Contants are meant to be variables that are never modified. They are _immutable_
 _We'll see more how these are used as we go along_
 
 ### Examples
-* MAX_NUM_OF_STUDENTS = 25
-* APPLICATION_NAME = "Ruby Calculator"
-* class Calculator   # creates a CONSTANT named Calulator
-* module Order   # creates a CONSTANT named Order
+* `MAX_NUM_OF_STUDENTS = 25`
+* `APPLICATION_NAME = "Ruby Calculator"`
+* `class Calculator   # creates a CONSTANT named Calulator`
+* `module Order   # creates a CONSTANT named Order`
 
 ## Reserved Words
 These words are reserved in the Ruby language.  
-alias, and, BEGIN, begin,break, case, class, def, defined?, do, else, elsif,   END, end, ensure, false, or if,in, module, next, nil, not, or, redo,  
-rescue, retry, return, self, super, then, true, undef, unless, until,when, while   yield
+`alias`, `and`, `BEGIN`, `begin`, `break`, `case`, `class`, `def`, `defined?`, `do`, `else`, `elsif`, `END`, `end`, `ensure`, `false`, `or`, `if`, `in`, `module`, `next`, `nil`, `not`, `or`, `redo`,  
+`rescue`, `retry`, `return`, `self`, `super`, `then`, `true`, `undef`, `unless`, `until`, `when`, `while`, `yield`
 
 Only use these reserved words as intended by the language.
 
