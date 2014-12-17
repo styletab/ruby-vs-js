@@ -30,7 +30,11 @@ Together, these subtasks will make an apple pie. You don't start making an apple
 
 ### Expectations
 
-But,
+How do you know if *each* task has been completed properly? Sure, you could just try to make all together and see if you have an edible apple pie at the end, but that's going to make a lot of bad pies and figuring out which step you did wrong is going to be tricky.
+
+What if for each sub-task you had a set of expectations that would be true afterward?
+
+After you preheat the over to 425, you should be able to measure the temperature of the oven and find the temperature. When you peel the apples, you should then have peeled apples. This might sound incredibly basic, but it ensures with some degree of confidence that the task has been properly completed.
 
 ### Sample Task 1
 
