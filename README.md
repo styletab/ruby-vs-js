@@ -38,9 +38,28 @@ After you preheat the over to 425, you should be able to measure the temperature
 
 ### Sample Task 1
 
-Computers are great at math, so let's start with
+Computers are better at math than pie. Let's say we have a task to add two numbers together. You might already know how to do this, but let's talk about our expectations around adding two numbers.
+
+A quick math test:
+
+```
+2 + 2 = ?
+10 + 2 = ?
+-10 + 10 = ?
+```
+
+We know the answers are 4, 12 and 0 respectively. We *expect* that if we add `2 + 2` then we expect `4` to be the answer.
+
+In a moment we're going to write a *function* to complete this task. But before we even write that we want to know if we've got it right.
+
+To do this we use a tool called *rSpec*. We've already setup the rSpec tool for you in this repo, and we'll talk more about it in detail later. The point now is that we want to learn to write out our expectations and then write the code to fulfill them.
+
+In the `/spec/math_spec.rb` file, you'll see the following:
+
+```ruby
 
 
+```
 
 ## Objects
 Object are really just "things". Lets list some objects.
