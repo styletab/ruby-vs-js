@@ -1,5 +1,43 @@
 ![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
+## What does a program do?
+
+A *program* is a set of *instructions*, written to perform a *task* with a computer. The first *language* we work with in WDI is *Ruby*.
+
+This task may be made up of several sub-tasks that together can be used to complete the larger task.
+
+### Real Life: Tasks
+
+Your task is to make an apple pie. What subtasks might be involved?
+
+Let's use [this Serious Eats](http://www.seriouseats.com/recipes/2011/10/perfect-apple-pie-recipe-double-crusted-thanksgiving-dessert.html) recipe as an example.
+
+There are lots of sub-tasks in making the pie, but the first ones might be:
+
+- Adjust oven rack to lower middle position
+- Place heavy rimmed baking sheet on oven rack
+- Preheat oven to 425
+- Peel apples
+- Cut apples into slices
+- Places apple slices in large bowl
+- Turn on stove
+- Fill pot with 3 quarts of water
+- Boil 3 quart pot of water on stove
+- Pour boiling water on top of apples slices
+- etc...
+
+Together, these subtasks will make an apple pie. You don't start making an apple pie by just "making the pie" all at once, but by completing each task in order.
+
+### Expectations
+
+But,
+
+### Sample Task 1
+
+Computers are great at math, so let's start with
+
+
+
 ## Objects
 Object are really just "things". Lets list some objects.
 
@@ -13,36 +51,36 @@ Object are really just "things". Lets list some objects.
 Look around the room and find me about some objects.
 
 In programming we represent objects, that may or may not, live in the
-real world in a couple of different ways. 
+real world in a couple of different ways.
 
 * Physically in the computers memory in 1 and 0's. We really don't
   have to think about this in Ruby.
 
-* Mainly we represent them in our head. We have a mental model of the objects in our ruby programs. 
+* Mainly we represent them in our head. We have a mental model of the objects in our ruby programs.
 * As a bunch of text that follows the "rules" of Ruby in a file.
 
 Typically, we want the representation of an object in our head  to
-reflected be as text in a Ruby file. 
+reflected be as text in a Ruby file.
 
 ## Classes
 Objects, or things, can be classified. For example:
 
-* top song of 1992 (Jeremy). Is "classified" as a __Song__.  
-* my songcloud playlist. Is a __Playlist__.  
-* my first car. Is a __Car__.  
-* your second cousin jane. Is a __Person__.  
-* the book "Stranger in a Strange Land". Is a __Book__.  
+* top song of 1992 (Jeremy). Is "classified" as a __Song__.
+* my songcloud playlist. Is a __Playlist__.
+* my first car. Is a __Car__.
+* your second cousin jane. Is a __Person__.
+* the book "Stranger in a Strange Land". Is a __Book__.
 * the number 23. Is an Integer, aka __Fixnum__ in Ruby.
 
 We "classify" objects in OOP by using a Class. So, Song, Playlist, Car,
-Person, Book and Integer are all Classes. 
+Person, Book and Integer are all Classes.
 
 We'll get into how these are represented and created later in the
 week.
 
-### Object's may have data *attributes* and *behavior*, aka methods. 
+### Object's may have data *attributes* and *behavior*, aka methods.
 * Song will have a name, duration, artist name data attributes and
-will have a play method.  
+will have a play method.
 	* The top song of 92 name is 'Jeremy', artist is 'Pearl Jam'.
 * Car will have a make, model and year attributes. And will have a
 refuel and reverse method.
@@ -52,7 +90,7 @@ refuel and reverse method.
 	* The integer 23 can be added, subtracted, etc.
 
 ## Data Types
-Are represented by classes that are "built into" a language. 
+Are represented by classes that are "built into" a language.
 
 We'll look at fixnum, floats, booleans, strings, symbols and ranges
 today. We'll look at the array and hash data types tomorrow.
@@ -60,7 +98,7 @@ today. We'll look at the array and hash data types tomorrow.
 #### Fixnum and Floats
 
 Some Fixnum objects, aka integers, are 10, 238, 1099, 87243956 and
-87_243_956. 
+87_243_956.
 
 Some Float objects are 1.2, 0.5, .5 12.10487, 12.5e1, 12.5e-1 and 0.67982e6.
 
@@ -71,7 +109,7 @@ These operators have precedence. When ruby sees mulitple operators,
 (==, <, >, &&, ||, ...), it will follow a set of evalation rules.
 
 [Operator Precedence](http://www.techotopia.com/index.php/Ruby_Operator_Precedence)
-  
+
 #### Booleans
 There are only two boolean objects, 'true' and 'false'. Only 'false'
 and nil are falsey. Every other object in Ruby is 'true'. We'll see more later.
@@ -90,11 +128,11 @@ A sequence of characters enclosed in a single quote or double quote.
 'third simple string with single quotes'
 
 #### Special Characters
-A string may have one or more special characters.  
-`'\n'  # newline`  
+A string may have one or more special characters.
+`'\n'  # newline`
 `'\t'  # tab`
 
-## Lab 
+## Lab
 * Look up the Ruby classes for the above data types, Fixnum, Float, Boolean and String.
 * Learn a new method for each of these and explain it to your the student to your right.
 * Read about one of the to_<something> methods and explain it to the student to your left.
@@ -145,17 +183,17 @@ The Ruby Conditionals If and Case statement are best described with a code along
 ### Demo
 * Create `conditionals.rb`.
 
-#### Lab 
+#### Lab
 * Create a `conditionals_lab.rb`.
 * Ask the user for thier letter grade, A|B|C|D|F.
-* Print out a message to the user depending on their grade. 
+* Print out a message to the user depending on their grade.
 * Do this once using `if/elsif/else` statement.
 
 ## Loops
 Will run the _body_ of the loop until either a condition is met OR until a break statement is executed in the body of the loop.
 
 #### Demo
-* Create a `loops.rb` file.  
+* Create a `loops.rb` file.
 
 #### Lab
 * Create a `loops_lab.rb`.
@@ -176,10 +214,10 @@ Interactive Ruby can be run on the command line.
 It will allow you to enter ruby expressions and run them. _Lets use Pry instead_
 
 ### Pry
-[Pry](http://pryrepl.org/) is an alternative, more powerful, alternative to IRB.  
+[Pry](http://pryrepl.org/) is an alternative, more powerful, alternative to IRB.
 
-`gem install pry`  
-`pry`  
+`gem install pry`
+`pry`
 
 ### Demo
 Lets start pry and play. Lets test out some of what we've learned above.
@@ -196,13 +234,13 @@ _We'll see more how these are used as we go along_
 * `module Order   # creates a CONSTANT named Order`
 
 ## Reserved Words
-These words are reserved in the Ruby language.  
-`alias`, `and`, `BEGIN`, `begin`, `break`, `case`, `class`, `def`, `defined?`, `do`, `else`, `elsif`, `END`, `end`, `ensure`, `false`, `or`, `if`, `in`, `module`, `next`, `nil`, `not`, `or`, `redo`,  
+These words are reserved in the Ruby language.
+`alias`, `and`, `BEGIN`, `begin`, `break`, `case`, `class`, `def`, `defined?`, `do`, `else`, `elsif`, `END`, `end`, `ensure`, `false`, `or`, `if`, `in`, `module`, `next`, `nil`, `not`, `or`, `redo`,
 `rescue`, `retry`, `return`, `self`, `super`, `then`, `true`, `undef`, `unless`, `until`, `when`, `while`, `yield`
 
 Only use these reserved words as intended by the language.
 
-## Ruby Styles 
+## Ruby Styles
 See this for Ruby name conventions and styles.
 
 [Ruby Style Guide](https://github.com/styleguide/ruby)
