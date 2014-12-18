@@ -57,9 +57,231 @@ To do this we use a tool called *rSpec*. We've already setup the rSpec tool for 
 In the `/spec/math_spec.rb` file, you'll see the following:
 
 ```ruby
+RSpec.describe "#add" do
+  it "sums two numbers" do
+    expect(add(2, 2)).to eq(4)
+    expect(add(10, 2)).to eq(12)
+    expect(add(-10, 10)).to eq(0)
+  end
+end
+```
 
+We run this *test* by running `rspec spec` from the *bash prompt* or *terminal*. This test passes, because the code to make it work is already in the `lib/math.rb` file.
+
+```ruby
+def add(a, b)
+  a + b
+end
+```
+
+Here we can see that we've written the *function* named `add`. It takes two *arguments* of `a` and `b`. It then returns the sum of `a` and `b` using the `+` method.
+
+The process we've used here is called *test driven development* (TDD). The steps we'll follow initially for TDD are as follows:
+
+1. For a *small task*, on paper write down your expectations about that task, as we did above for our `add` task.
+2. Write a test in *rspec* that expresses these expectations.
+3. Write the code that allows for the test to pass
+4. Once the test passes, see if you can improve or *refactor* your code to make it work even more clear and concise.
+5. Check that the tests still pass
+6. Move onto the next small task
+
+Let's look back at the rspec test to make sure we understand the syntax. I've added some comments above each line.
+
+```ruby
+
+# RSpec.describe is a method that takes two arguments, a string with the name of the method we're describing,
+# and a block (the do/end code).
+# By convention, we use the name of the function we're describing in the string.
+RSpec.describe "#add" do
+
+  # `it` is another method. It also takes a string and a block.
+  # The string is just a human-readable description of what you're saying the `add` method will do.
+  it "sums two numbers" do
+
+    # Below we have three expectations. We could have had more or less.
+    # You don't want to test every possibility under the sun, but testing different types of possibilities is a good idea.
+    # The syntax of these is `expect(your_method(method_args)).to eq(expected_result)`
+    # Only use `eq` for numbers and boolean values
+    expect(add(2, 2)).to eq(4)
+    expect(add(10, 2)).to eq(12)
+    expect(add(-10, 10)).to eq(0)
+  end
+end
+```
+
+#### Your Turn: Mini lab
+
+For the following tasks, write the expectations, test and code. Put tests in `spec/math_spec.rb` and code in `lib/math.rb`. Run `rspec spec` to ensure the tests pass.
+
+1. A method called `difference` that returns the difference between two numbers
+2. A method called `product` that returns the product of two numbers
+3. A method called `absolute_value` that returns the absolute value of a number
+4. A method called `square` that returns the number multiplied by itself
+
+## Methods/Functions
+
+We've just written several functions. You may also hear us refer to them as methods. For the moment, don't worry about the difference between the two.
+
+What is a function? A function is a small task. It may call other functions inside of it. A function maps an input to an output.
+
+Let's consider our `square(x)` function from above, which should be equivalent to the mathematical function of `f(x) = x^2`
+
+| Input | function   | Output |
+|-------|------------|--------|
+| 2     | f(x) = x^2 | 4      |
+| 4     | f(x) = x^2 | 16     |
+| 5     | f(x) = x^2 | 25     |
+| 10    | f(x) = x^2 | 100    |
+
+
+### How to write a function
+
+Writing a function is easy.
+
+First, consider what you want the function to do, and write this down. If you find yourself saying **and** at any point while describing a function, it might be doing too much already and you need to write two or more functions.
+
+What *datatypes* will your function take as an input, and what *datatype* do you expect as an output? For the `square(x)` function I expect to have a numerical input and a numerical output.
+
+Write down a set of inputs that will map to outputs, as I have done above for the `square(x)` function. These are your expectations of the results a function should have.
+
+Then write a set of rspec tests that express these expectations. You don't need to go overboard here, but testing a few different scenarios is important.
+
+```ruby
+RSpec.describe "#double_me" do
+  it "doubles a number" do
+    expect(double_me(2)).to eq(4)
+    expect(double_me(10)).to eq(20)
+    expect(double_me(-10)).to eq(-20)
+  end
+end
+```
+
+Now you can write your function!
+
+```ruby
+
+  # We define a function with the `def` keyword
+  # Then we write the name of the function in snake_case. In this example we're calling it double_me
+  # Your name should be descriptive and clear
+  # The function can take one or more *arguments*, which are the names for the local variables in the function
+  # The order of arguments is significant
+  # Its a good idea to have a set of comments above the function, as I do on the next three lines
+  # Input: number:Fixnum || Float
+  # Output: Fixnum || Float
+  # Description: Doubles an input number
+  def double_me(number)
+
+    # Here we do some computation
+    # Since this is the last (and only) line, it will be the return value of the function
+    number * 2
+
+    # We must mark that the function definition is completed with the `end` keyword
+  end
 
 ```
+
+Run your tests and consider if the code could be improved.
+
+### Writing better functions
+
+You can put anything inside the definition of a function, but that doesn't make it right. What makes a good function?
+
+- Have a clear input via one or more *arguments*
+- Have a clear output that is returned. In Ruby, the value of the last line of a function is automatically its *return value*
+- Can be run multiple times without changing the output. No matter how many times you run square(2), the answer will always be 4.
+- Have tests to document the expectations of the function
+- Use no global variables, and as few external objects as possible
+- Does not use `puts` or `gets`
+
+The most reliable functions are called [*pure functions*](http://en.wikipedia.org/wiki/Pure_function). When possible, try to write pure functions. What is a pure function? One that follows the following rules:
+
+1. The function always evaluates the same result value given the same argument value(s).
+2. The function result value cannot depend on any hidden information or state that may change as program execution proceeds or between different executions of the program
+3. The function cannot depend on any external input from I/O methods such as `gets`.
+4. Evaluation of the result does not cause any semantically observable side effect or output, such as mutation of mutable objects or output to I/O devices.
+
+#### Pure Function examples:
+
+- `sin(90)`
+- `add(1, 2)`
+
+#### Impure function examples:
+
+- `prompt_user_for_input()`
+- `rand()`
+
+### Composition
+
+Function composition is the combination of one or more functions to create a more complex function. The result of each function is returned as an argument to the next one.
+
+Consider the following
+
+```ruby
+def reverse_string(string)
+  string.reverse
+end
+
+def uppercase_string(string)
+  string.upcase
+end
+
+def reverse_and_uppercase_string(example)
+  reverse_string(uppercase_string(example))
+end
+```
+
+The `reverse_and_uppercase_string` is composed of the two prior functions. Its results are predictable and reusable.
+
+#### Question:
+
+How might you test the above functions?
+
+### Summary on Functions
+
+While there is some computational cost to creating functions, we will generally consider having more functions to be a good thing. It is far better to have two dozen tiny functions than it is to have 3 giant functions.
+
+### Wait a minute!
+
+> But, all of the programs I wrote before this class used a done of input and output! How will I know if its working? Users don't just run tests! There's no way to write a program like this!
+
+Yes, in reality you will eventually need to write some functions that handle input and output in order for users to have any benefit from your program. However, it is important to keep these functions separate from the rest of your functions. What might be wrong with the following implementation of `double_me()`?
+
+```ruby
+
+def double_me
+  puts "What number would you like to double?"
+  x = gets.chomp.to_i
+  puts (x * 2).to_s
+end
+```
+
+Answer: This function is very hard to test. Its doing several things at once. Finding a bug is going to be hard. Also this code isn't reusable at all! What if you wanted to use `double_me()` in a website, Google Glass or a spaceship? Perhaps Google Glass doesn't have a keyboard for input!
+
+But yes, you might want `double_me()` to actually do something for a user. So instead do it like this:
+
+```ruby
+def prompt_user
+  puts "What number would you like to double"
+end
+
+def user_input
+  gets.chomp.to_i
+end
+
+def double_me(x)
+  x * 2
+end
+
+def print_results(result)
+  puts "The number doubled is: " + result
+end
+
+def prompt_user_and_double
+  prompt_user
+  print_results(double_me(user_input))
+end
+```
+
 
 ## Objects
 Object are really just "things". Lets list some objects.
@@ -76,14 +298,12 @@ Look around the room and find me about some objects.
 In programming we represent objects, that may or may not, live in the
 real world in a couple of different ways.
 
-* Physically in the computers memory in 1 and 0's. We really don't
-  have to think about this in Ruby.
+* Physically in the computers memory in 1 and 0's. We really don't have to think about this in Ruby.
 
 * Mainly we represent them in our head. We have a mental model of the objects in our ruby programs.
 * As a bunch of text that follows the "rules" of Ruby in a file.
 
-Typically, we want the representation of an object in our head  to
-reflected be as text in a Ruby file.
+Typically, we want the representation of an object in our head  to reflected be as text in a Ruby file.
 
 ## Classes
 Objects, or things, can be classified. For example:
@@ -95,18 +315,14 @@ Objects, or things, can be classified. For example:
 * the book "Stranger in a Strange Land". Is a __Book__.
 * the number 23. Is an Integer, aka __Fixnum__ in Ruby.
 
-We "classify" objects in OOP by using a Class. So, Song, Playlist, Car,
-Person, Book and Integer are all Classes.
+We "classify" objects in OOP by using a Class. So, Song, Playlist, Car, Person, Book and Integer are all Classes.
 
-We'll get into how these are represented and created later in the
-week.
+We'll get into how these are represented and created later in the week.
 
 ### Object's may have data *attributes* and *behavior*, aka methods.
-* Song will have a name, duration, artist name data attributes and
-will have a play method.
+* Song will have a name, duration, artist name data attributes and will have a play method.
 	* The top song of 92 name is 'Jeremy', artist is 'Pearl Jam'.
-* Car will have a make, model and year attributes. And will have a
-refuel and reverse method.
+* Car will have a make, model and year attributes. And will have a refuel and reverse method.
 	* My first car was a 69, Ford LTD a total _POS_.
 * Person will have a name, age attributes and a talk method/behavior.
 * Fixnum will have a add/subtract/mult/divide methods.
