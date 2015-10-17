@@ -1,4 +1,4 @@
-require_relative 'mem_addr.rb'
+require_relative '../lib/mem_addr.rb'
 
 # Ruby will:
 # - Notice that this statement is assignment. '=' is the assignment operator.
