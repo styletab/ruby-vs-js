@@ -1,49 +1,57 @@
-# Create a variable age and assign it a value
-# Assignment Operator (=).
+# Create a variable and assign it a value
+# using the Assignment Operator (=).
 current_address = "35 Sixth Ave"
-puts 'current_address is ' + current_address
-
+puts "current_address is " + current_address
 # WARNING: Don't confuse the Assignment Operator, =, with the Equality Operator, ==
 
-# Reassign the variable
+# Reassign the value of the variable
 current_address = "503 Main St."
-puts 'current_address is ' + current_address
-
-# REMEMBER: That the variable is ONLY pointing to an object.
-
-puts 'current_address is pointing ot the object with an id of ' + current_address.object_id.to_s
-
-current_address = "44 Warren St"
-puts 'current_address is ' + current_address
-puts 'current_address is pointing ot the object with an id of ' + current_address.object_id.to_s
+puts "\ncurrent_address is " + current_address
 
 # Create another variable and set it's value
 work_address = "52 Melcher St"
-puts 'work_address is ' + work_address
+puts "\nwork_address is " + work_address
 
 # Assignment of one variable using another variable.
 work_address = current_address
-puts 'current_address is ' + current_address
+puts "\ncurrent_address is " + current_address
 puts 'work_address is ' + work_address
-puts 'current_address is pointing ot the object with an id of ' + current_address.object_id.to_s
-puts 'working_address is pointing ot the object with an id of ' + current_address.object_id.to_s
 
-# NOTICE HOW BOTH CURRENT ADDRESS AND WORKING ADDRESS ARE POINTING TO THE SAME INSTANCE OF A STRING
+# gsub creates a NEW STRING and replaces 'Main' with 'Elm'
+new_address = current_address.gsub(/Main/, 'Elm')
+puts "\nnew_address after gsub is " + new_address
+puts 'current_address after gsub is ' + current_address
+puts 'work_address is after gsub is ' + work_address
+#Notice how current or working address has NOT been changed
 
-# Create a set of variables
-current_age = 44
-retire_age = 65
-years_to_go = retire_age - current_age
+# gsub! changes the string current_address
+current_address.gsub!(/Main/, 'Elm')
+puts "\ncurrent_address after gsub! is " + current_address
+puts 'work_address is after gsub! is ' + work_address
+# Notice how current BOTH working address and current address have been changed
+# This is because current and working address point to the same
+# String Object!!!
 
-# What is current_age pointing to?
-# What's the object that current_age is pointing to's class?
+# Change current_address. This will create a new String object
+# and set current_address to point to this new String object.
+current_address +=  " Stoneham"
+puts "\ncurrent_address after += is " + current_address
+puts 'work_address is after += ' + work_address
 
-# What is retire_age pointing to?
-# What's the object that current_age is pointing to's class?
+# Reset work_address to reference same string as current_address.
+work_address = current_address
 
-# Notice the #to_s method. It's converting an integer to string
-puts "years until retirement = " + years_to_go.to_s
+# This will change current_address in place. It will
+# change the String that current_address is pointing
+# to.
+current_address << ", MA"
+puts "\ncurrent_address after << is " + current_address
+puts 'work_address is after << is ' + work_address
 
-# Cast to a different type/class.
-twenty_three_integer = "23".to_i
-twenty_three_integer = "23".to_f
+# The nil keyword/object is used to indicate that a variable
+# has no value.
+jill_address = nil
+puts "Jill's address is " + jill_address.inspect
+
+# Variables only come into existence when they assigned a value
+puts last_address
