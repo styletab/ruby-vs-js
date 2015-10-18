@@ -11,8 +11,16 @@
 * Create variables.
 * Create interpolated Strings.
 * Prompt users for input.
-* Use conditional statements.
-* Use looping contructs. 
+* Use Ruby's conditional statements.
+* Use Ruby's looping constructs.
+
+## Setup
+
+Install Ruby Gems, *these are Ruby libraries, more on Ruby Gems later.*
+
+```
+$ bundle install
+```
 
 ## Objects
 
