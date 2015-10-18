@@ -1,7 +1,7 @@
 require 'pry'
 
 # Breakpoint with pry
-# binding.pry
+binding.pry
 
 # If/Else statement
 # General Form is:
@@ -17,12 +17,27 @@ else
   puts "Say Goodby"
 end
 
+if false
+  puts "Say Hello"
+else
+  puts "Say Goodbye"
+end
+
+# Boolean Expression (bool-expr) '33 < 37' evaluates to true
+# Then invoke code inside the if clause
+# Else invoke the code inside the else clause.
+if 33 < 37
+  puts "Say Hello"
+else
+  puts "Say Goodbye"
+end
+
 old_age = 60
 person_age = 56
 
 # If statement can come after statement,
 # reads like english, huh?
-puts "Hi Youngster" if person_age < old_age
+puts "Hi Oldie" if person_age > old_age
 
 middle_age = 40
 person_age = 43
@@ -63,6 +78,7 @@ else
   puts "Hey Youngster"
 end
 
+
 # Unlike other langauges, for example C, you do NOT need a break
 # statement in each when clause. Only first matching bool-expr will
 # execute.
@@ -88,3 +104,18 @@ when "Monday", "Wednesday"
 when "Saturday", "Sunday"
   puts "It's the weekend"
 end
+
+# When the target expression, target-expr, equals the boolean expression in the 'when' clause.
+# Execute/Invoke the code inside the 'when' clause.
+
+# If none of the 'when' clauses bool-expr equals the target-expr
+# Execute/Invoke the code inside the else clause.
+
+# case target-expr
+# when boolean-expr
+#  Code to execute
+# when boolean-expr
+#  Code to execute
+# else boolean-expr
+#  Code to execute if
+# end

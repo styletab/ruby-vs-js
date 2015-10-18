@@ -441,14 +441,95 @@ puts "Years until retirement = " + years_to_go.to_s
 
 The Ruby Conditionals If and Case statement are best described with a code along.
 
-### Demo
-* Create `conditionals.rb`.
+> Create and run `demo/conditionals.rb`.
 
-#### Lab 
-* Create a `conditionals_lab.rb`.
+```ruby
+
+# Breakpoint with pry
+# binding.pry
+
+if true
+  puts "Say Hello"
+else
+  puts "Say Goodby"
+end
+
+old_age = 60
+person_age = 56
+
+# If statement can come after statement,
+# reads like english, huh?
+puts "Hi Youngster" if person_age < old_age
+
+middle_age = 40
+person_age = 43
+
+# Elsif
+if person_age > old_age
+  puts 'Hi Oldie'
+elsif person_age > middle_age
+  puts 'Hi Middie'
+else
+  puts 'Yuz a yung un'
+end
+
+# Unless, opposite of If
+unless old_age > person_age
+  puts "Hi Oldie"
+else
+  puts 'Hi younger one'
+end
+
+# Case statement. (Not used that often)
+# When you need to take a variety of different actions based on the
+# value of a single variable, multiple if..elsif tests are verbose and
+# repetitive.
+person_age = 43
+
+case
+when person_age >= old_age
+  puts "Hey Oldster"
+when person_age >= middle_age
+  puts "Hey Midster"
+else
+  puts "Hey Youngster"
+end
+
+
+# Unlike other langauges, for example C, you do NOT need a break
+# statement in each when clause. Only first matching bool-expr will
+# execute.
+# For Example: This will ONLY print "Your a Tom"
+# What if we match a couple of when boolean expressions?
+name = "Tom Smith"
+case
+when name.include?("Tom")
+  puts "Your a Tom"
+when name.include?("Smith")
+  puts "Your a Smith"
+when name == "Tom Smith"
+  puts "Your a Tom Smith"
+else
+  puts "Can find any of the above"
+end
+
+# Can match multiple values in the when bool-expr
+today = "Sunday"
+case today
+when "Monday", "Wednesday"
+  puts "It's a long day"
+when "Saturday", "Sunday"
+  puts "It's the weekend"
+end
+```
+
+#### You Do.
+* Create a `lab/conditionals_lab.rb`.
 * Ask the user for thier letter grade, A|B|C|D|F.
 * Print out a message to the user depending on their grade. 
-* Do this once using `if/elsif/else` statement.
+* Use `if/elsif/else` statement.
+* Check for valid input.
+* Allow user to enter a lower case grade.
 
 ## Loops
 Will run the _body_ of the loop until either a condition is met OR until a break statement is executed in the body of the loop.
