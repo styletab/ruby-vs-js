@@ -1,5 +1,19 @@
 ![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
+
+## Objectives
+
+* Create Ruby objects for numbers, strings and boolean values.
+* Invoke Ruby on the command line.
+* Use a Ruby REPL.
+* Invoke instance methods.
+* Find an object's class.
+* Create variables.
+* Create interpolated Strings.
+* Prompt users for input.
+* Use conditional statements.
+* Use looping contructs. 
+
 ## Objects
 
 **Objects** are really just "things". Lets list some objects.
@@ -361,17 +375,36 @@ Create a couple of variables, *all values will be an instance of a String.*
 * Name of some therimin instructor that you will have after you finally get around to signing up for instruction at the senior center. *Oh, maybe you don't have a name for them yet but you want a variable.*
 * Go back to the above "What is a variable" and show someone examples of each item in the list.
 
+## Variables in Depth (Optional)
+
+> Work through `demo/variables_in_depth.rb` to understand how Ruby treats objects in memory.  
+
+> Work through `demo/pass_by_value.rb` to understand how Ruby passes values to method by value. *Where passed value is a pointer.*
+
+**TODO: Instructor should draw diagrams that describe how variables are allocated and referenced in memory.**
+
 ## String Interpolation
 Allow variable names and expressions to be interpreted as strings inside of other strings.
 
-* uses the pound curly brace syntax  #{some_variable}
+Ruby uses "pound curly braces" to do string interpolation.
 
-### Demo
-* Create a `strings_interpolation.rb` in the demo dir.
+```ruby
 
+mom = 'Gladys Dyer'
+puts "My mom is #{mom}"
 
-## Lab
-Create a file `vehicle_devaluate.rb` that will create variables for.  
+street_num = 39
+street_suffix =	'Ave'
+street = "Wedgemere #{street_suffix}"
+city = 'Lowell'
+state = 'MA'
+puts "#{street_num} #{street}, #{city} #{state}"
+
+# Notice how the Fixnum object 39 is converted to a String object!
+```
+
+## You Do
+> In the file `vehicle_devaluate.rb` create variables for.  
 
 * your first name.  
 * your last name.  
@@ -381,15 +414,28 @@ Create a file `vehicle_devaluate.rb` that will create variables for.
 * How much it would be worth in the year 2018, given it devaluates by by 3 percent each year.  
 * Replace the spaces in the file with the variables you created above and output the string using puts.  
 
+> Then substitute the `___` with variables created about. Of course, they will interpolated as strings.
+> 
+
 ## Input with gets
-The method gets will:
+
+The method gets will:    
+
 * Wait for user input in the console/terminal.
 * Return the user input within the program when the user hits the return/enter key.
 
-Open `years_until_retire.rb` and run it.
+> Create and run the file `demo/years_to_retirement.rb`
 
-## Lab
-Do the above lab __BUT__ prompt the user for the value of each variable.
+```ruby
+retire_age = 65
+
+puts "What is you age? "
+
+current_age = gets.chomp!.to_i
+years_to_go = retire_age - current_age
+
+puts "Years until retirement = " + years_to_go.to_s
+```
 
 ## Conditionals
 
