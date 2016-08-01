@@ -47,7 +47,7 @@ end
 #     'other' => []
 #   }
 #
-#   for i in 1..max_num
+#   1.upto(max_num) do |i|
 #     if i % 3 == 0 && i % 5 == 0
 #       fb['fizzbuzz'] << i
 #     elsif i % 3 == 0
